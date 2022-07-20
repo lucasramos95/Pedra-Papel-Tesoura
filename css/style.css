@@ -1,0 +1,37 @@
+* {
+    margin-right: 0;
+    margin-left: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    border: 5px solid rgb(152, 152, 152);
+    border-radius: 15px;
+    padding: 20px;
+    width: 50%;
+}
+
+.container li {
+    color: white;
+    list-style: none;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.attribution { 
+    color: white;
+    font-size: 16px; text-align: center; 
+}
+
+.attribution a { 
+    color: black; 
+}

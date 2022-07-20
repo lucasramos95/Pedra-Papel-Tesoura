@@ -2,36 +2,48 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedra, Papel & Tesoura</title>
-
-  Placar
-  Regras
-
-  Você Escolheu
-  CPU Escolheu
-
-  Você ganhou!
-  Você perdeu!
-
-  Jogar Novamente
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <header>
+    <img class="logo" src="images/logo.svg"/>
+      <h1 class="placar" id="placar">PLACAR</h1>
+        <div id="marcaPonto" class="ponto">
+          <div class="secaoJogador">
+            <p id="pontosJogador">JOGADOR: 0</p>
+          </div>
+          <div class="secaoCpu">
+            <p id="pontosCpu">CPU: 0</p>
+          </div>
+        </div>
+  </header>
 
+  <div class="choices">
+    <i id="rock" class="choice far fa-hand-rock fa-10x"></i>
+    <i id="paper" class="choice far fa-hand-paper fa-10x"></i>
+    <i id="scissors" class="choice far fa-hand-scissors fa-10x"></i>
+</div>
 
-  
+<button id="restart-btn">JOGAR NOVAMENTE</button>
+
+<button id="regras-btn"><a href="#">REGRAS</a></button>
+
+<script src="javascript/main.js"></script>
+
+<footer>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Lucas Ramos</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+    Coded by <a href="https://github.com/lucasramos95">Lucas Ramos</a>
   </div>
+</footer>
+
+    
 </body>
 </html>
