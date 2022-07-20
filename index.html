@@ -13,7 +13,8 @@
 
 <body>
   <header>
-    <img class="logo" src="images/logo.svg"/>
+    <div class="logo-pontos">
+      <img class="logo" src="images/logo.svg"/>
       <h1 class="placar" id="placar">PLACAR</h1>
         <div id="marcaPonto" class="ponto">
           <div class="secaoJogador">
@@ -23,15 +24,19 @@
             <p id="pontosCpu">CPU: 0</p>
           </div>
         </div>
+    </div>
+    
   </header>
 
   <div class="choices">
-    <i id="rock" class="choice far fa-hand-rock fa-10x"></i>
-    <i id="paper" class="choice far fa-hand-paper fa-10x"></i>
-    <i id="scissors" class="choice far fa-hand-scissors fa-10x"></i>
-</div>
+    <img class ="triangulo" src="images/bg-triangle.svg" id="triangulo"/>
+    <img class ="pedra" src="images/icon-rock.svg" id="pedra"/>
+    <img class ="papel" src="images/icon-paper.svg" id="papel"/>
+    <img class ="tesoura" src="images/icon-scissors.svg" id="tesoura"/>
+    
+  </div>
 
-<button id="restart-btn">JOGAR NOVAMENTE</button>
+<button id="jogar-novamente-btn">JOGAR NOVAMENTE</button>
 
 <button id="regras-btn"><a href="#">REGRAS</a></button>
 
@@ -39,11 +44,12 @@
 
 <footer>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
-    Coded by <a href="https://github.com/lucasramos95">Lucas Ramos</a>
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+  Coded by <a href="https://github.com/lucasramos95">Lucas Ramos</a>
   </div>
 </footer>
 
-    
+
 </body>
+
 </html>

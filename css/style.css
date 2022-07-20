@@ -6,25 +6,47 @@
 }
 
 body {
-    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #1e3c72 100%);
 }
 
-.container {
+.logo-pontos {
+    border: 2px solid rgb(130, 130, 130);
+    border-radius: 5px;
+}
+
+.logo {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.placar {
     display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    border: 5px solid rgb(152, 152, 152);
-    border-radius: 15px;
-    padding: 20px;
-    width: 50%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
 }
 
-.container li {
-    color: white;
-    list-style: none;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 35px;
+#pontosJogador {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+#pontosCpu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+.triangulo {
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
 }
 
 .attribution { 
