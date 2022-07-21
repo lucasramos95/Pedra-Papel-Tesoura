@@ -9,7 +9,7 @@ body {
     background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #1e3c72 100%);
 }
 
-.logo-pontos {
+.logo-placar {
     border: 2px solid rgb(130, 130, 130);
     border-radius: 5px;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 .triangulo {
-    top: 50%;
+    top: 65%;
     left: 50%;
     position: fixed;
     transform: translate(-50%, -50%);
@@ -51,7 +51,8 @@ body {
 
 .attribution { 
     color: white;
-    font-size: 16px; text-align: center; 
+    font-size: 16px; 
+    text-align: center; 
 }
 
 .attribution a { 

@@ -13,34 +13,33 @@
 
 <body>
   <header>
-    <div class="logo-pontos">
-      <img class="logo" src="images/logo.svg"/>
-      <h1 class="placar" id="placar">PLACAR</h1>
-        <div id="marcaPonto" class="ponto">
-          <div class="secaoJogador">
-            <p id="pontosJogador">JOGADOR: 0</p>
+    <div class="logo-placar">
+      <div class="logo-titulo"><img src="images/logo.svg"/></div><!--Logo do Jogo-->
+      
+        <div class="placar"><h1 class="placar" id="placar">PLACAR</h1></div>
+
+          <div id="marcaPonto" class="ponto">
+            <div class="secaoJogador">
+              <p id="pontosJogador">JOGADOR: 0</p>
+            </div>
+
+            <div class="secaoCpu">
+              <p id="pontosCpu">CPU: 0</p>
+            </div>
           </div>
-          <div class="secaoCpu">
-            <p id="pontosCpu">CPU: 0</p>
-          </div>
-        </div>
     </div>
-    
   </header>
 
-  <div class="choices">
+  <div class="opcoes">
     <img class ="triangulo" src="images/bg-triangle.svg" id="triangulo"/>
-    <img class ="pedra" src="images/icon-rock.svg" id="pedra"/>
-    <img class ="papel" src="images/icon-paper.svg" id="papel"/>
-    <img class ="tesoura" src="images/icon-scissors.svg" id="tesoura"/>
-    
+    <button class="pedra"><img class ="pedra" src="images/icon-rock.svg" id="pedra"/></button>
+    <button class="papel"><img class ="papel" src="images/icon-paper.svg" id="papel"/></button>
+    <button class="tesoura"><img class ="tesoura" src="images/icon-scissors.svg" id="tesoura"/></button>
   </div>
 
 <button id="jogar-novamente-btn">JOGAR NOVAMENTE</button>
 
 <button id="regras-btn"><a href="#">REGRAS</a></button>
-
-<script src="javascript/main.js"></script>
 
 <footer>
   <div class="attribution">
@@ -49,6 +48,7 @@
   </div>
 </footer>
 
+<script src="javascript/main.js"></script>
 
 </body>
 
