@@ -13,3 +13,6 @@ const jogarJogo = () => {
     const opcoesCpu = ['pedra','papel','tesoura']
     console.log();
 }
+
+
+

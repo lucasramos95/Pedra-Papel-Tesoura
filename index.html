@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedra, Papel & Tesoura</title>
+  <link rel="icon" type=" " href=".png">
   <link rel="stylesheet" href="css/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <div class="logo-placar">
-      <div class="logo-titulo"><img src="images/logo.svg"/></div><!--Logo do Jogo-->
-      
-        <div class="placar"><h1 class="placar" id="placar">PLACAR</h1></div>
-
-          <div id="marcaPonto" class="ponto">
-            <div class="secaoJogador">
-              <p id="pontosJogador">JOGADOR: 0</p>
-            </div>
-
-            <div class="secaoCpu">
-              <p id="pontosCpu">CPU: 0</p>
-            </div>
-          </div>
+  <header class="placar-interface">
+    <img class="placar-logo" src="images/logo.svg" alt="Pedra, Papel & Tesoura"><!--Logo do Jogo-->
+    <div class="placar-caixa">
+      <p class="placar-caixa-placar">PLACAR</p>
+      <p class="placar-caixa-pontos">0</p>
     </div>
   </header>
 
-  <div class="opcoes">
-    <img class ="triangulo" src="images/bg-triangle.svg" id="triangulo"/>
-    <button class="pedra"><img class ="pedra" src="images/icon-rock.svg" id="pedra"/></button>
-    <button class="papel"><img class ="papel" src="images/icon-paper.svg" id="papel"/></button>
-    <button class="tesoura"><img class ="tesoura" src="images/icon-scissors.svg" id="tesoura"/></button>
+<main class="jogo-interface">
+  <img class ="triangulo" src="images/bg-triangle.svg" id="triangulo" alt="Triângulo">
+    <div class="opcoes-jogo">
+      <button class="pedra-btn"><img class ="pedra" src="images/icon-rock.svg" id="pedra" alt="Pedra"></button>
+      <button class="papel-btn"><img class ="papel" src="images/icon-paper.svg" id="papel" alt="Papel"></button>
+      <button class="tesoura-btn"><img class ="tesoura" src="images/icon-scissors.svg" id="tesoura" alt="Tesoura"></button>
+    </div>
+    <div class="resultado-jogo">
+      <button class="escolha-jogador" aria-label="Você Escolheu"></button>
+      <p class="resultado-label resultado-label-jogador">Você Escolheu</p>
+      <div class="resultado-caixa">
+        <p class="resultado-jogo"></p>
+        <button class="btn-jogar-novamente" aria-label="Jogar Novamente">Jogar Novamente</button>
+      </div>
+      <div class="carregamento"></div>
+      <button class="escolha-cpu" aria-label="CPU Escolheu">CPU Escolheu</button>
+      <p class="resultado-label resultado-label-cpu">CPU Escolheu</p>
+    </div>
+</main>
+  
+
+<footer class="footer-interface">
+  <button class="resetar-btn" aria-label="Resetar">RESETAR</button>
+  <button class="regras-btn" aria-label="Regras">REGRAS</button>
+
+<div class="regras-modal">
+  <div class="regras-modal-conteudo">
+    <img class="regras-modal-conteudo-fechar" src="images/icon-close.svg" alt="Fechar Regras do Jogo">
+    <img class="regras-modal-conteudo-conteudo-img" src="images/rules.jpg" alt="Regras do Jogo">
   </div>
-
-<button id="jogar-novamente-btn">JOGAR NOVAMENTE</button>
-
-<button id="regras-btn"><a href="#">REGRAS</a></button>
-
-<footer>
+</div>
   <div class="attribution">
-  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
-  Coded by <a href="https://github.com/lucasramos95">Lucas Ramos</a>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+    Coded by <a href="https://github.com/lucasramos95">Lucas Ramos</a>
   </div>
 </footer>
 
-<script src="javascript/main.js"></script>
+<script src="javascript/codigo-jogo.js"></script>
+<script src="javascript/regras.js"></script>
 
 </body>
 

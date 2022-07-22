@@ -9,39 +9,6 @@ body {
     background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #1e3c72 100%);
 }
 
-.logo-placar {
-    border: 2px solid rgb(130, 130, 130);
-    border-radius: 5px;
-}
-
-.logo {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-}
-
-.placar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-}
-
-#pontosJogador {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-}
-
-#pontosCpu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-}
-
 .triangulo {
     top: 65%;
     left: 50%;
