@@ -72,8 +72,65 @@ function printarResultado() {
             elementosDoJogo.jogoPlacar.textContent = placar;
             break;
     }
-    console.log(`result: ${elementosDoJogo.resultadoJogo.textContent}`);
+    console.log(`resultado: ${elementosDoJogo.resultadoJogo.textContent}`);
 
     //manter o placar do jogo
     localStorage.setItem('placar', JSON.stringify(placar));
+}
+
+//esconder tela do jogo e mostrar tela de resultado
+function renderizarTelaResultado () {
+    elementosDoJogo.jogoInterface.style.display = 'none';
+    elementosDoJogo.resultadoInterface.style.display = 'grid';
+    elementosDoJogo.selecaoJogadorBtn.style.display = 'none'; //esconde escolha da CPU
+    elementosDoJogo.resultadoJogo.style.display = 'none'; //esconde resultado da interface
+
+//adiciona botão selecionado para seleção do jogador
+elementosDoJogo.selecaoJogadorBtn.classList.add(`${selecaoJogadorBtn}`);
+console.log(`Sua escolha: ${selecaoJogadorBtn}`);
+
+//adiciona escolha da CPU depois de um delay
+setTimeout( function() {
+    elementosDoJogo.selecaoCpuBtn.classList.add(`${selecaoCpuBtn}`);
+    console.log(`Cpu escolhe: ${selecaoJogadorBtn}`);
+    elementosDoJogo.carregamentoPonto.style.display = 'none';
+    elementosDoJogo.selecaoCpuBtn.style.display = 'grid';
+    //mostrar resultado depois o delay
+    setTimeout( function() {
+        printarResultado();
+        elementosDoJogo.resultadoInterface.style.display = 'initial';
+        elementosDoJogo.resultadoInterface.style.gridTemplateArea = 'resultBox'
+        //redimensionar interface do resultado para visualizar caixa de resultado
+        let janelaTamanho = janela.matchMedia('(min-width: 992px)');
+        if (janelaTamanho.matches) {
+            elementosDoJogo.resultadoInterface.style.width = '80%';
+            elementosDoJogo.resultadoInterface.style.gridTemplateColumns = '1fr 1fr 1fr';
+        }
+    }, 500)
+}, 3000)
+}
+
+//jogar outra rodada quando botão 'Jogar Novamente' é clicado
+elementosDoJogo.jogarNovamente.addEventListener('click', renderizarTelaJogo);
+
+//esconder tela de resultado e 'resetar' tudo para tela do jogo
+function renderizarTelaJogo() {
+    elementosDoJogo.jogoInterface.style.display = '';
+    elementosDoJogo.resultadoInterface.style.display = '';
+    elementosDoJogo.resultadoInterface.style.width = '';
+    elementosDoJogo.resultadoInterface.style.gridTemplateColumns = '';
+    elementosDoJogo.selecaoJogadorBtnBtn.classList.remove(`${selecaoJogadorBtn}`);
+    elementosDoJogo.selecaoCpuBtnBtn.classList.remove(`${selecaoJogadorBtn}`);
+    elementosDoJogo.selecaoJogadorBtnBtn.classList.remove('É vencedor');
+    elementosDoJogo.selecaoCpuBtnBtn.classList.remove('É vencedor');
+    elementosDoJogo.carregamentoPonto.style.display = '';
+}
+
+//'resetar' placar quando botão resetar é clicado
+elementosDoJogo.jogoReseta.addEventListener('click', jogoReseta);
+
+function resetaJogo() {
+    placar = 0;
+    elementosDoJogo.jogoPlacar.textContent = placar;
+    localStorage.clear();
 }
