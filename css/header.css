@@ -1,0 +1,56 @@
+@import "./global.css";
+
+.header {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 15px;
+  max-width: 550px;
+  border: solid 2px rgb(161, 161, 161);
+  border-radius: 7px;
+}
+
+.header > .title {
+  z-index: 2;
+  text-transform: uppercase;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  word-spacing: 100vw;
+  line-height: 20px;
+  margin: 0 15px;
+  flex: 1;
+}
+
+.header > .score-board {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 90px;
+  width: 100px;
+  overflow: hidden;
+  padding: 10px 25px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.header > .score-board > p {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--score-text);
+}
+
+.header > .score-board > span {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--dark-text);
+  line-height: 50px;
+}

@@ -1,0 +1,90 @@
+@import "./global.css";
+
+.rules-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 140px;
+  margin: 30px 30px 40px 30px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: white;
+  border: solid 1px white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.rules-btn:hover {
+  background-color: white;
+  color: rgb(15, 81, 146);
+}
+
+#rules {
+  z-index: 1;
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#rules:target {
+  display: flex;
+}
+
+.rules-bg {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.452);
+}
+
+.rules-modal {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  transform: scale(0.7);
+}
+
+.rules-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.rules-header > div {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+  color: hsl(228, 25%, 31%);
+}
+
+@media only screen and (min-width: 375px) {
+  .rules-modal {
+    transform: scale(0.9);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .rules-modal {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 1375px) {
+  .rules-modal {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,203 @@
+@import "./global.css";
+.content {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: visible;
+}
+
+.pick-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  transform: scale(0.6);
+}
+
+@media only screen and (min-width: 900px) {
+  .pick-zone {
+    transform: scale(0.8);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .pick-zone {
+    transform: scale(1);
+  }
+}
+
+#pick-bg {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+#pick-bg.hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pick-title {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  opacity: 0;
+  text-shadow: 1px 1px 5px black;
+}
+.pick-title--player {
+  transform: translate(-150px, 40px);
+}
+.pick-title--cp {
+  transform: translate(150px, 40px);
+}
+.pick-title.picked {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.result-zone {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translate(0, 160px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.result-zone.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+.result-zone > .title {
+  text-transform: uppercase;
+  font-size: 80px;
+  font-weight: 700;
+  color: white;
+  margin: 10px;
+  text-shadow: 1px 1px 5px black;
+}
+.result-zone > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 300px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: white;
+  color: hsl(228, 25%, 31%);
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px black;
+  cursor: pointer;
+}
+.result-zone > a:hover {
+  background-color: rgb(228, 228, 228);
+}
+.result-zone > a:active {
+  transform: scale(1.1);
+  background-color: rgb(196, 196, 196);
+  transition: all 0.3 ease;
+}
+
+.badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.5s ease, height 0.3s ease, width 0.3s ease;
+}
+.badge:active:not(.selected) {
+  height: 170px;
+  width: 170px;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
+.badge > img {
+  z-index: 2;
+}
+
+/*badges do jogador*/
+#rock {
+  background: white;
+  border: 18px solid rgb(210, 46, 46);
+  transform: translate(0, 90px);
+  transform-origin: center;
+}
+
+#paper {
+  background-color: white;
+  border: 18px solid rgb(28, 42, 202);
+  transform: translate(-120px, -110px);
+  transform-origin: center;
+}
+#scissors {
+  background-color: white;
+  border: 18px solid rgb(102, 243, 20);
+  transform: translate(120px, -110px);
+  transform-origin: center;
+}
+
+.badge:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+#rock.selected, #paper.selected, #scissors.selected {
+  z-index: 3;
+  transform: translate(-150px, -135px) scale(1.3);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+#rock.hidden, #paper.hidden, #scissors.hidden {
+  z-index: 2;
+  transform: translate(-150px, -135px) scale(0.8);
+  transform-origin: center;
+  transition: transform 0.5s ease;
+}
+
+/*badges da cpu*/
+#cp-rock {
+  background: white;
+  border: 18px solid rgb(210, 46, 46);
+}
+#cp-paper {
+  background-color: white;
+  border: 18px solid rgb(28, 42, 202);
+}
+#cp-scissors {
+  background-color: white;
+  border: 18px solid rgb(102, 243, 20);
+}
+
+#cp-rock, #cp-paper, #cp-scissors {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(150px, -135px) scale(0.1);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+#cp-rock.selected, #cp-paper.selected, #cp-scissors.selected {
+  z-index: 3;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(150px, -135px) scale(1.3);
+  transition: transform 0.3s ease;
+}

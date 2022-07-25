@@ -15,4 +15,4 @@ Lista de tarefas, estrutura do código.
 - [X] Fazer Botão Pedra Vermelho.
 - [X] Fazer Botão Papel Azul.
 - [X] Fazer Botão Tesoura Amarelo.
-- [] Fazer estilização da página.
+- [X] Fazer estilização da página.
