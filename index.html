@@ -5,63 +5,72 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedra, Papel & Tesoura</title>
-  <link rel="stylesheet" href="css/styles.css">
-
+  <meta name="author" content="Lucas Ramos">
+  <title>Pedra, Papel & Tesoura | Frontend Mentor</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="placar-interface">
-    <img class="placar-logo" src="images/logo.svg" alt="Pedra, Papel & Tesoura"><!--Logo do Jogo-->
-    <div class="placar-caixa">
-      <p class="placar-caixa-placar">Placar</p>
-      <p class="placar-caixa-pontos">0</p>
+  <div class="header"><!--Logo do Jogo-->
+    <div class="title">pedra papel tesoura</div> 
+    <div class="score-board">     
+      <p>Placar</p>
+      <span>0</span>
     </div>
-  </header>
+  </div>
 
-<main class="jogo-interface">
-  <img class="triangulo" src="images/bg-triangle.svg" alt="Imagem de um trinagulo">
-    <article class="opcoes-jogo">
-      <button class="pedra-btn"><img class ="pedra" src="images/icon-rock.svg" id="pedra" alt="Pedra"></button>
-      <button class="papel-btn"><img class ="papel" src="images/icon-paper.svg" id="papel" alt="Papel"></button>
-      <button class="tesoura-btn"><img class ="tesoura" src="images/icon-scissors.svg" id="tesoura" alt="Tesoura"></button>
-    </article>
-    <article class="resultado-jogo">
-      <button class="escolha-do-jogador" aria-label="Você Escolheu"></button>
-      <p class="resultado-label resultado-label-jogador">Você Escolheu</p>
-      <div class="resultado-caixa">
-        <p class="resultado-do-jogo"></p>
-        <button class="btn-jogar-novamente" aria-label="Jogar Novamente">Jogar Novamente</button>
+<div class="content">
+    <div class="pick-zone">
+        <div class="pick-title pick-title--player">você escolheu</div>
+        <div class="pick-title pick-title--cp">computador escolheu</div>
+      <div class="result-zone">
+      <div class="title">Você venceu!</div>
+      <a type="button" onclick="playAgain()" title="Play again">jogar novamente</a>
       </div>
-      <div class="ponto-carregamento"></div>
-      <button class="escolha-da-cpu" aria-label="CPU Escolheu">CPU Escolheu</button>
-      <p class="resultado-label resultado-label-cpu">CPU Escolheu</p>
-    </article>
-</main>
-  
-
-<footer class="footer-interface">
-  <button class="resetar-btn" aria-label="Resetar">RESETAR</button>
-  <button class="regras-btn" aria-label="Regras">REGRAS</button>
-
-<div class="regras-modal">
-  <div class="regras-modal-conteudo">
-    <img class="regras-modal-conteudo-fechar" src="images/icon-close.svg" alt="Fechar Regras do Jogo">
-    <img class="regras-modal-conteudo-conteudo-img" src="images/rules.jpg" alt="Regras do Jogo">
-  </div>
-</div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
-    Coded by <a href="https://github.com/lucasramos95">Lucas Ramos</a>
-  </div>
-</footer>
-
-<script src="javascript/codigo-jogo.js"></script>
-<script src="javascript/regras.js"></script>
+      <div id="winner-aura">
+      </div>
+      <div id="pick-bg" class>
+        <img src="images/bg-triangle.svg">
+      </div>
+      <div id="rock" class="badge" onclick="selectBadge('rock')">
+        <img src="images/icon-rock.svg">
+      </div>
+      <div id="paper" class="badge" onclick="selectBadge('paper')">
+        <img src="images/icon-paper.svg">
+      </div>
+      <div id="scissors" class="badge" onclick="selectBadge('scissors')">
+        <img src="images/icon-scissors.svg">
+      </div>
+      <div id="cp-rock" class="badge">
+        <img src="images/icon-rock.svg">
+      </div>
+      <div id="cp-paper" class="badge">
+        <img src="images/icon-paper.svg">
+      </div>
+      <div id="cp-scissors" class="badge">
+        <img src="images/icon-scissors.svg">
+      </div>
+    </div><!--div.pick-zone-->
+</div><!--div.content-->
+<a class="rules-btn" href="#rules">regras</a>
+  <div id="rules">
+    <a class="rules-bg" href="#"></a>
+  <div class="rules-modal">
+    <div class="rules-header">
+    <div>rules</div>
+    <a class="close" href="#" title="Close">
+      <img src="images/icon-close.svg">
+    </a>
+  </div><!--rules-header-->
+  <img src="images/rules.jpg">
+</div><!--rules-modal-->
+</div><!--rules-->
 
 </body>
+
+<script type="text/javascript" src="javascript/main.js"></script>
 
 </html>
