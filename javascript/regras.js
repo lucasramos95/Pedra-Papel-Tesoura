@@ -17,4 +17,4 @@ function janelaClique (event) {
 //adicionar função quando os botões/janela são clicados
 btn.addEventListener('click', alternarModal);
 fechar.addEventListener('click', alternarModal);
-janela.addEventListener('click', janelaClique); 
+window.addEventListener('click', janelaClique); 

@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedra, Papel & Tesoura</title>
-  <link rel="icon" type=" " href=".png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,29 +17,29 @@
   <header class="placar-interface">
     <img class="placar-logo" src="images/logo.svg" alt="Pedra, Papel & Tesoura"><!--Logo do Jogo-->
     <div class="placar-caixa">
-      <p class="placar-caixa-placar">PLACAR</p>
+      <p class="placar-caixa-placar">Placar</p>
       <p class="placar-caixa-pontos">0</p>
     </div>
   </header>
 
 <main class="jogo-interface">
-  <img class ="triangulo" src="images/bg-triangle.svg" id="triangulo" alt="Triângulo">
-    <div class="opcoes-jogo">
+  <img class="triangulo" src="images/bg-triangle.svg" alt="Imagem de um trinagulo">
+    <article class="opcoes-jogo">
       <button class="pedra-btn"><img class ="pedra" src="images/icon-rock.svg" id="pedra" alt="Pedra"></button>
       <button class="papel-btn"><img class ="papel" src="images/icon-paper.svg" id="papel" alt="Papel"></button>
       <button class="tesoura-btn"><img class ="tesoura" src="images/icon-scissors.svg" id="tesoura" alt="Tesoura"></button>
-    </div>
-    <div class="resultado-jogo">
+    </article>
+    <article class="resultado-jogo">
       <button class="escolha-do-jogador" aria-label="Você Escolheu"></button>
       <p class="resultado-label resultado-label-jogador">Você Escolheu</p>
       <div class="resultado-caixa">
         <p class="resultado-do-jogo"></p>
         <button class="btn-jogar-novamente" aria-label="Jogar Novamente">Jogar Novamente</button>
       </div>
-      <div class="carregamento"></div>
+      <div class="ponto-carregamento"></div>
       <button class="escolha-da-cpu" aria-label="CPU Escolheu">CPU Escolheu</button>
       <p class="resultado-label resultado-label-cpu">CPU Escolheu</p>
-    </div>
+    </article>
 </main>
   
 

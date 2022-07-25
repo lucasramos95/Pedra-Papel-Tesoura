@@ -1,18 +1,18 @@
 const elementosDoJogo = {
-    jogoInterface: document.querySelector('.jogo-interface'),
+    jogoInterface: document.querySelector('.opcoes-jogo'),
     jogoBotoes: Array.from(document.querySelector('.opcoes-jogo').children),
     jogoPlacar: document.querySelector('.placar-caixa-pontos'),
     resultadoInterface: document.querySelector('.resultado-jogo'),
     resultadoJogo: document.querySelector('.resultado-do-jogo'),
     selecaoJogadorBtn: document.querySelector('.escolha-do-jogador'),
     selecaoCpuBtn: document.querySelector('.escolha-da-cpu'),
-    resultadoInterface: document.querySelector('.resultado-caixa'),
+    resultadoInterfaceJogo: document.querySelector('.resultado-caixa'),
     jogarNovamente: document.querySelector('.btn-jogar-novamente'),
-    carregamentoPonto: document.querySelector('.carregamento'),
+    carregamentoPonto: document.querySelector('.ponto-carregamento'),
     jogoReseta: document.querySelector('.resetar-btn')
 };
 
-let selecaoCpuBtn,selecaoJogadorBtn;
+let selecaoCpu,selecaoJogador;
 let resultado = false;
 
 //preservar o placar na atualização da página
@@ -20,33 +20,36 @@ let placar = localStorage.getItem('placar')?(JSON.parse(localStorage.getItem('pl
 console.log('placar:', placar);
 elementosDoJogo.jogoPlacar.textContent = placar;
 
-function computadorJogaTurno() {
-    let selecaoAleatoria = Math.floor(Math.random() * elementosDoJogo.jogoBotoes.length);
-    selecaoCpuBtn = elementosDoJogo.jogoBotoes[selecaoAleatoria].className;
-    return selecaoCpuBtn;
-}
-
-function jogarTurno(event) {
-    selecaoJogadorBtn = event.currentTarget.className;
-    selecaoCpuBtn = computadorJogaTurno();
-    obterResultado(selecaoCpuBtn,selecaoJogadorBtn);
-}
-
 //jogar o round quando o botão de jogo é clicado
 for(let elem of elementosDoJogo.jogoBotoes) {
     elem.addEventListener('click', jogarTurno);
 }
 
+function computadorJogaTurno() {
+    let selecaoAleatoria = Math.floor(Math.random() * elementosDoJogo.jogoBotoes.length);
+    selecaoCpu = elementosDoJogo.jogoBotoes[selecaoAleatoria].className;
+    return selecaoCpu;
+}
+
+function jogarTurno(event) {
+    selecaoJogador = event.currentTarget.className;
+    selecaoCpu = computadorJogaTurno();
+    obterResultado(selecaoCpu,selecaoJogador);
+    renderizarTelaResultado();
+}
+
+
+
 //comparar seleções e obter resultado
-function obterResultado(selecaoJogadorBtn, selecaoCpuBtn) {
-    if (selecaoJogadorBtn === selecaoCpuBtn) {
+function obterResultado(selecaoJogador, selecaoCpu) {
+    if (selecaoJogador === selecaoCpu) {
         resultado = undefined;
-    } else if (selecaoJogadorBtn === 'pedra-btn' && selecaoCpuBtn === 'pedra-btn') {
+    } else if (selecaoJogador === 'pedra-btn' && selecaoCpu === 'pedra-btn') {
         resultado = true;
-    } else if (selecaoJogadorBtn === 'pedra-btn' && selecaoCpuBtn === 'tesoura-btn') {
-        result = true;
-    } else if (selecaoJogadorBtn === 'tesoura-btn' && selecaoCpuBtn === 'papel-btn') {
-        result = true;
+    } else if (selecaoJogador === 'pedra-btn' && selecaoCpu === 'tesoura-btn') {
+        resultado = true;
+    } else if (selecaoJogador === 'tesoura-btn' && selecaoCpu === 'papel-btn') {
+        resultado = true;
     } else {
         resultado = false;
     }
@@ -57,17 +60,17 @@ function obterResultado(selecaoJogadorBtn, selecaoCpuBtn) {
 function printarResultado() {
     switch(resultado) {
         case undefined:
-            elementosDoJogo.resultadoJogo.textContent = 'Empate.';
+            elementosDoJogo.resultadoJogo.textContent = 'Empate';
             break;
         case true:
-            elementosDoJogo.selecaoJogadorBtn.classList.add('é o vencedor');
+            elementosDoJogo.selecaoJogadorBtn.classList.add('é-o-vencedor');
             elementosDoJogo.resultadoJogo.textContent = 'Você Venceu!';
             placar++;
             elementosDoJogo.jogoPlacar.textContent = placar;
             break;
         case false:
             elementosDoJogo.resultadoJogo.textContent = 'Você Perdeu';
-            elementosDoJogo.selecaoCpuBtn.classList.add('é o vencedor');
+            elementosDoJogo.selecaoCpuBtn.classList.add('é-o-vencedor');
             placar--;
             elementosDoJogo.jogoPlacar.textContent = placar;
             break;
@@ -83,25 +86,25 @@ function renderizarTelaResultado () {
     elementosDoJogo.jogoInterface.style.display = 'none';
     elementosDoJogo.resultadoInterface.style.display = 'grid';
     elementosDoJogo.selecaoJogadorBtn.style.display = 'none'; //esconde escolha da CPU
-    elementosDoJogo.resultadoJogo.style.display = 'none'; //esconde resultado da interface
+    elementosDoJogo.resultadoInterface.style.display = 'none'; //esconde resultado da interface
 
 //adiciona botão selecionado para seleção do jogador
-elementosDoJogo.selecaoJogadorBtn.classList.add(`${selecaoJogadorBtn}`);
-console.log(`Sua escolha: ${selecaoJogadorBtn}`);
+elementosDoJogo.selecaoJogadorBtn.classList.add(`${selecaoJogador}`);
+console.log(`Sua escolha: ${selecaoJogador}`);
 
 //adiciona escolha da CPU depois de um delay
 setTimeout( function() {
-    elementosDoJogo.selecaoCpuBtn.classList.add(`${selecaoCpuBtn}`);
-    console.log(`Cpu escolhe: ${selecaoJogadorBtn}`);
+    elementosDoJogo.selecaoCpuBtn.classList.add(`${selecaoCpu}`);
+    console.log(`Cpu escolhe: ${selecaoCpu}`);
     elementosDoJogo.carregamentoPonto.style.display = 'none';
     elementosDoJogo.selecaoCpuBtn.style.display = 'grid';
     //mostrar resultado depois o delay
     setTimeout( function() {
         printarResultado();
-        elementosDoJogo.resultadoInterface.style.display = 'initial';
-        elementosDoJogo.resultadoInterface.style.gridTemplateArea = 'resultBox'
+        elementosDoJogo.resultadoInterfaceJogo.style.display = 'initial';
+        elementosDoJogo.resultadoInterfaceJogo.style.gridTemplateArea = 'resultBox'
         //redimensionar interface do resultado para visualizar caixa de resultado
-        let janelaTamanho = janela.matchMedia('(min-width: 992px)');
+        let janelaTamanho = window.matchMedia('(min-width: 992px)');
         if (janelaTamanho.matches) {
             elementosDoJogo.resultadoInterface.style.width = '80%';
             elementosDoJogo.resultadoInterface.style.gridTemplateColumns = '1fr 1fr 1fr';
@@ -119,15 +122,15 @@ function renderizarTelaJogo() {
     elementosDoJogo.resultadoInterface.style.display = '';
     elementosDoJogo.resultadoInterface.style.width = '';
     elementosDoJogo.resultadoInterface.style.gridTemplateColumns = '';
-    elementosDoJogo.selecaoJogadorBtnBtn.classList.remove(`${selecaoJogadorBtn}`);
-    elementosDoJogo.selecaoCpuBtnBtn.classList.remove(`${selecaoJogadorBtn}`);
-    elementosDoJogo.selecaoJogadorBtnBtn.classList.remove('É vencedor');
-    elementosDoJogo.selecaoCpuBtnBtn.classList.remove('É vencedor');
+    elementosDoJogo.selecaoJogadorBtn.classList.remove(`${selecaoJogador}`);
+    elementosDoJogo.selecaoCpuBtn.classList.remove(`${selecaoJogador}`);
+    elementosDoJogo.selecaoJogadorBtn.classList.remove('É-vencedor');
+    elementosDoJogo.selecaoCpuBtn.classList.remove('É-vencedor');
     elementosDoJogo.carregamentoPonto.style.display = '';
 }
 
 //'resetar' placar quando botão resetar é clicado
-elementosDoJogo.jogoReseta.addEventListener('click', jogoReseta);
+elementosDoJogo.jogoReseta.addEventListener('click', resetaJogo);
 
 function resetaJogo() {
     placar = 0;
