@@ -22,7 +22,7 @@ Para restaurar/resetar pontuação, você pode atualizar a página.
 
 <h2>Mobile:</h2>
 
-![05](https://user-images.githubusercontent.com/108039029/180877226-54d08342-5e9c-42d2-a4e9-fe4ca5f70f62.jpg)
+![05](https://user-images.githubusercontent.com/108039029/180886315-0a2b3fb4-6a29-40e2-be8b-6e04b2c0f908.jpg)
 
 ![06](https://user-images.githubusercontent.com/108039029/180877241-d6de109f-da98-45a8-bb82-ae8ec81d308b.jpg)
 
